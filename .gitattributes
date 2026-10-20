@@ -1,0 +1,6 @@
+# O visualizador embute a biblioteca 3D e sai de scripts/build_graph.py
+graph/viewer.html linguist-generated
+graph/vendor/** linguist-vendored
+
+# Consultas no dialeto do PostgreSQL
+*.sql linguist-language=PLpgSQL

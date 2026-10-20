@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+build/
+*.pyc
+.env
+*.env
+*.csv
+*.dump
+*.backup
+*.sqlite
+*.db
+.DS_Store

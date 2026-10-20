@@ -1,0 +1,18 @@
+# tb_cds_ficha_visita_domiciliar
+
+Tipo: tabela  
+Grupo: fichas_cds  
+Colunas: 8
+
+| # | Coluna | Tipo | Obrigatória | Chave |
+|--:|---|---|:-:|---|
+| 1 | `co_seq_cds_ficha_visita_dom` | `bigint` | sim | PK |
+| 2 | `dt_ficha` | `timestamp without time zone` | não |  |
+| 3 | `st_ficha` | `integer` | não |  |
+| 4 | `tp_cds_origem` | `bigint` | não |  |
+| 5 | `co_unico_ficha` | `character varying(96)` | sim |  |
+| 6 | `co_cds_prof` | `bigint` | sim | FK → tb_cds_prof |
+| 7 | `co_localidade_origem` | `bigint` | não | FK → tb_localidade |
+| 8 | `ds_versao_ficha` | `character varying(30)` | não |  |
+
+Referenciada por: `tb_cds_visita_domiciliar`
