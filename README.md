@@ -12,9 +12,11 @@
   <img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-green">
 </p>
 
-Mapa completo do banco PostgreSQL do e-SUS APS (Prontuário Eletrônico do Cidadão, versão 5.5.28) e um catálogo de consultas SQL para quem trabalha com gestão, monitoramento e auditoria da Atenção Primária no SUS.
+Criei este repositório para facilitar o trabalho com o banco de dados do e-SUS APS, o prontuário eletrônico usado nas unidades básicas de saúde do SUS.
 
-O esquema foi extraído só do catálogo do sistema, sem ler nenhuma linha de dados. As consultas cobrem busca ativa, imunização, saneamento de cadastro e indicadores do cofinanciamento da APS, e cada uma passou por `EXPLAIN` no PostgreSQL 9.6 e no 16.
+Ele tem duas partes. A primeira é um mapa de todas as tabelas do sistema, com o que cada coluna guarda e como as tabelas se ligam. A segunda são consultas SQL prontas para tarefas do dia a dia da Atenção Primária, como encontrar quem precisa de busca ativa, acompanhar a vacinação, arrumar o cadastro e calcular os indicadores que entram no repasse federal.
+
+Nenhum dado de paciente foi usado: o mapa vem só da estrutura do banco, e as consultas foram testadas no PostgreSQL 9.6 e no 16.
 
 ## Sumário
 
