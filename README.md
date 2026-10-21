@@ -12,9 +12,9 @@
   <img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-green">
 </p>
 
-Criei este repositório para facilitar a vida de quem precisa entender e ler os dados do banco do e-SUS APS, o prontuário eletrônico (PEC) usado nas unidades básicas de saúde do SUS.
+Repositório criado para facilitar a vida de quem precisa entender e ler os dados do banco do e-SUS APS, o prontuário eletrônico (PEC) usado nas unidades básicas de saúde do SUS.
 
-Pensei principalmente em quem trabalha com TI na saúde pública e mexe com o e-SUS PEC no dia a dia, e em desenvolvedores que estão criando sistemas integrados ao PEC e precisam puxar dados do banco. Se você quer montar um painel, um BI, acompanhar indicadores ou criar alguma ferramenta em cima desses dados, a ideia é que aqui você encontre o caminho mais rápido.
+Pensado em quem trabalha com TI na saúde pública e mexe com o e-SUS PEC no dia a dia, e em desenvolvedores que estão criando sistemas integrados ao PEC e precisam puxar dados do banco. Se você quer montar um painel, um BI, acompanhar indicadores ou criar alguma ferramenta em cima desses dados, a ideia é que aqui você encontre o caminho mais rápido.
 
 O repositório tem duas partes. A primeira é um mapa de todas as tabelas do PEC, com o que cada coluna guarda e como as tabelas se ligam. A segunda são consultas SQL prontas para coisas que a gente faz o tempo todo na Atenção Primária: achar quem precisa de busca ativa, acompanhar a vacinação, arrumar o cadastro e calcular os indicadores que entram no repasse federal.
 
