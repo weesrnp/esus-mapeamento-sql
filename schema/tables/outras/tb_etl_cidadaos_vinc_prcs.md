@@ -1,4 +1,4 @@
-# tb_acomp_cidadaos_vinc_prcs
+# tb_etl_cidadaos_vinc_prcs
 
 Tipo: tabela  
 Grupo: outras  

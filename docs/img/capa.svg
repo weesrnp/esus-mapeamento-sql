@@ -372,15 +372,15 @@
 <rect width="794" height="420" fill="url(#fade)"/>
 <g font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">
 <rect x="64" y="52" width="232" height="30" rx="15" fill="#4aa3ff" fill-opacity=".14" stroke="#4aa3ff" stroke-opacity=".45"/>
-<text x="180" y="72" text-anchor="middle" font-size="14" font-weight="600" fill="#9ccbff" letter-spacing=".5">e-SUS APS · PEC 5.5.28</text>
+<text x="180" y="72" text-anchor="middle" font-size="14" font-weight="600" fill="#9ccbff" letter-spacing=".5">e-SUS APS · PEC 5.6.1</text>
 <text x="61" y="150" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,'Liberation Mono',monospace" font-size="56" font-weight="700" fill="#eef3fb">esus-<tspan fill="#52d6a4">mapeamento</tspan>-sql</text>
 <text x="64" y="198" font-size="24" fill="#b7c4d8">Mapa do banco PostgreSQL do e-SUS APS e</text>
 <text x="64" y="230" font-size="24" fill="#b7c4d8">consultas SQL para a gestão da Atenção Primária</text>
-<text x="64" y="278" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,'Liberation Mono',monospace" font-size="30" font-weight="700" fill="#f5a623">1.180</text>
+<text x="64" y="278" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,'Liberation Mono',monospace" font-size="30" font-weight="700" fill="#f5a623">1.188</text>
 <text x="64" y="302" font-size="15" fill="#8ea2c0">tabelas</text>
-<text x="224" y="278" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,'Liberation Mono',monospace" font-size="30" font-weight="700" fill="#f5a623">10.648</text>
+<text x="224" y="278" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,'Liberation Mono',monospace" font-size="30" font-weight="700" fill="#f5a623">10.796</text>
 <text x="224" y="302" font-size="15" fill="#8ea2c0">colunas</text>
-<text x="402" y="278" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,'Liberation Mono',monospace" font-size="30" font-weight="700" fill="#f5a623">1.668</text>
+<text x="402" y="278" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,'Liberation Mono',monospace" font-size="30" font-weight="700" fill="#f5a623">1.688</text>
 <text x="402" y="302" font-size="15" fill="#8ea2c0">chaves FK</text>
 <text x="562" y="278" font-family="ui-monospace,SFMono-Regular,'Cascadia Code',Consolas,'Liberation Mono',monospace" font-size="30" font-weight="700" fill="#f5a623">41</text>
 <text x="562" y="302" font-size="15" fill="#8ea2c0">consultas</text>

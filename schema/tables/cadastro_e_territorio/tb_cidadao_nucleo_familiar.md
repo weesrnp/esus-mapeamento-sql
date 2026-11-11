@@ -2,7 +2,7 @@
 
 Tipo: tabela  
 Grupo: cadastro_e_territorio  
-Colunas: 11
+Colunas: 12
 
 | # | Coluna | Tipo | Obrigatória | Chave |
 |--:|---|---|:-:|---|
@@ -17,3 +17,4 @@ Colunas: 11
 | 9 | `nu_cns_profissional` | `character varying(16)` | não |  |
 | 10 | `nu_cbo2002` | `character varying(10)` | não |  |
 | 11 | `co_grau_parentesco` | `integer` | não | FK → tb_grau_parentesco |
+| 12 | `co_familia` | `bigint` | não | FK → tb_familia |

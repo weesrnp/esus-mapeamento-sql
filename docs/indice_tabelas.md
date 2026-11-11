@@ -1,8 +1,8 @@
 # Índice de tabelas
 
-1186 objetos extraídos do catálogo. Coluna "Consultas" = quantas consultas do repositório usam a tabela.
+1195 objetos extraídos do catálogo. Coluna "Consultas" = quantas consultas do repositório usam a tabela.
 
-## auditoria (193)
+## auditoria (194)
 
 | Tabela | Colunas | PK | FKs | Consultas |
 |---|--:|---|--:|--:|
@@ -59,11 +59,12 @@
 | [ta_cfg_agenda_detalhe](../schema/tables/auditoria/ta_cfg_agenda_detalhe.md) | 9 | co_seq_tacfgagendadetalhe | 0 | 0 |
 | [ta_cfg_agenda_municipal](../schema/tables/auditoria/ta_cfg_agenda_municipal.md) | 6 | co_seq_tacfgagendamunicipal | 0 | 0 |
 | [ta_cfg_agenda_online_detalhe](../schema/tables/auditoria/ta_cfg_agenda_online_detalhe.md) | 10 | co_seq_tacfgagendaonlinedetalh | 0 | 0 |
-| [ta_cfg_certificado](../schema/tables/auditoria/ta_cfg_certificado.md) | 15 | co_seq_tacfgcertificado | 0 | 0 |
+| [ta_cfg_certificado](../schema/tables/auditoria/ta_cfg_certificado.md) | 17 | co_seq_tacfgcertificado | 0 | 0 |
 | [ta_chamada_painel](../schema/tables/auditoria/ta_chamada_painel.md) | 9 | co_seq_tachamadapainel | 0 | 0 |
 | [ta_cidadao](../schema/tables/auditoria/ta_cidadao.md) | 90 | co_seq_tacidadao | 0 | 0 |
 | [ta_cidadao_aldeado](../schema/tables/auditoria/ta_cidadao_aldeado.md) | 20 | co_seq_tacidadaoaldeado | 0 | 0 |
 | [ta_cidadao_grupo](../schema/tables/auditoria/ta_cidadao_grupo.md) | 12 | co_seq_tacidadaogrupo | 0 | 0 |
+| [ta_cidadao_grupo_historico](../schema/tables/auditoria/ta_cidadao_grupo_historico.md) | 8 | co_seq_tacidadaogrupohistorico | 0 | 0 |
 | [ta_cidadao_unificacao_base](../schema/tables/auditoria/ta_cidadao_unificacao_base.md) | 9 | co_seq_tacidadaounificacaobase | 0 | 0 |
 | [ta_cidadao_vinculacao_equipe](../schema/tables/auditoria/ta_cidadao_vinculacao_equipe.md) | 18 | co_seq_tacidadaovinculacaoequp | 0 | 0 |
 | [ta_cirurgias_internacoes](../schema/tables/auditoria/ta_cirurgias_internacoes.md) | 9 | co_seq_tacirurgiasinternacoes | 0 | 0 |
@@ -200,20 +201,36 @@
 | [ta_vinculacao_equipes](../schema/tables/auditoria/ta_vinculacao_equipes.md) | 6 | co_seq_tavinculacaoequipes | 0 | 0 |
 | [ta_vinculacao_servico](../schema/tables/auditoria/ta_vinculacao_servico.md) | 7 | co_seq_tavinculacaoservico | 0 | 0 |
 
-## cadastro_e_territorio (10)
+## cadastro_e_territorio (12)
 
 | Tabela | Colunas | PK | FKs | Consultas |
 |---|--:|---|--:|--:|
 | [tb_cidadao](../schema/tables/cadastro_e_territorio/tb_cidadao.md) | 85 | co_seq_cidadao | 18 | 17 |
+| [tb_ods_cidadaos_vinculados](../schema/tables/cadastro_e_territorio/tb_ods_cidadaos_vinculados.md) | 59 | co_seq_acomp_cidadaos_vinc | 0 | 17 |
 | [tb_cidadao_bolsa_familia](../schema/tables/cadastro_e_territorio/tb_cidadao_bolsa_familia.md) | 7 | co_seq_cidadao_bolsa_familia | 1 | 4 |
 | [tb_cidadao_aldeado](../schema/tables/cadastro_e_territorio/tb_cidadao_aldeado.md) | 17 | co_seq_cidadao_aldeado | 5 | 0 |
 | [tb_cidadao_grupo](../schema/tables/cadastro_e_territorio/tb_cidadao_grupo.md) | 9 | co_seq_cidadao_grupo | 3 | 0 |
 | [tb_cidadao_grupo_ativ_col](../schema/tables/cadastro_e_territorio/tb_cidadao_grupo_ativ_col.md) | 9 | co_seq_cidadao_grupo | 1 | 0 |
-| [tb_cidadao_nucleo_familiar](../schema/tables/cadastro_e_territorio/tb_cidadao_nucleo_familiar.md) | 11 | co_seq_cidadao_nucleo_familiar | 2 | 0 |
+| [tb_cidadao_grupo_historico](../schema/tables/cadastro_e_territorio/tb_cidadao_grupo_historico.md) | 5 | co_seq_cid_grupo_historico | 2 | 0 |
+| [tb_cidadao_nucleo_familiar](../schema/tables/cadastro_e_territorio/tb_cidadao_nucleo_familiar.md) | 12 | co_seq_cidadao_nucleo_familiar | 3 | 0 |
 | [tb_cidadao_unificacao_base](../schema/tables/cadastro_e_territorio/tb_cidadao_unificacao_base.md) | 6 | co_seq_cidadao_unificacao_base | 2 | 0 |
 | [tb_cidadao_vinculacao_equipe](../schema/tables/cadastro_e_territorio/tb_cidadao_vinculacao_equipe.md) | 15 | co_seq_cidadao_vinculacao_eqp | 4 | 0 |
 | [tb_equipe](../schema/tables/cadastro_e_territorio/tb_equipe.md) | 10 | co_seq_equipe | 2 | 0 |
 | [tb_equipe_unificacao_base](../schema/tables/cadastro_e_territorio/tb_equipe_unificacao_base.md) | 5 | co_seq_equipe_unificacao_base | 1 | 0 |
+
+## data_marts (9)
+
+| Tabela | Colunas | PK | FKs | Consultas |
+|---|--:|---|--:|--:|
+| [tb_mrt_condicoes_saude](../schema/tables/data_marts/tb_mrt_condicoes_saude.md) | 23 | co_fat_cidadao_pec | 1 | 0 |
+| [tb_mrt_desenv_infantil](../schema/tables/data_marts/tb_mrt_desenv_infantil.md) | 19 | co_fat_cidadao_pec | 1 | 0 |
+| [tb_mrt_diabetes](../schema/tables/data_marts/tb_mrt_diabetes.md) | 13 | co_fat_cidadao_pec | 1 | 0 |
+| [tb_mrt_gestante_puerpera](../schema/tables/data_marts/tb_mrt_gestante_puerpera.md) | 29 | co_fat_cidadao_pec | 1 | 0 |
+| [tb_mrt_hipertensao](../schema/tables/data_marts/tb_mrt_hipertensao.md) | 10 | co_fat_cidadao_pec | 1 | 0 |
+| [tb_mrt_idoso](../schema/tables/data_marts/tb_mrt_idoso.md) | 23 | co_fat_cidadao_pec | 1 | 0 |
+| [tb_mrt_saude_bucal](../schema/tables/data_marts/tb_mrt_saude_bucal.md) | 8 | co_fat_cidadao_pec | 1 | 0 |
+| [tb_mrt_saude_mulher](../schema/tables/data_marts/tb_mrt_saude_mulher.md) | 13 | co_fat_cidadao_pec | 1 | 0 |
+| [tb_mrt_vacina](../schema/tables/data_marts/tb_mrt_vacina.md) | 9 | co_seq_mrt_vacina | 1 | 0 |
 
 ## dimensoes (95)
 
@@ -315,7 +332,7 @@
 | [tb_dim_vinculacao_equipes](../schema/tables/dimensoes/tb_dim_vinculacao_equipes.md) | 3 | co_seq_dim_vinculacao_equipes | 2 | 0 |
 | [tb_dim_zika_tipo_exame](../schema/tables/dimensoes/tb_dim_zika_tipo_exame.md) | 4 | co_seq_dim_zika_tipo_exame | 0 | 0 |
 
-## fatos (54)
+## fatos (47)
 
 | Tabela | Colunas | PK | FKs | Consultas |
 |---|--:|---|--:|--:|
@@ -323,10 +340,10 @@
 | [tb_fat_atendimento_individual](../schema/tables/fatos/tb_fat_atendimento_individual.md) | 89 | co_seq_fat_atd_ind | 31 | 21 |
 | [tb_fat_vacinacao_vacina](../schema/tables/fatos/tb_fat_vacinacao_vacina.md) | 31 | co_seq_fat_vacinacao_vacina | 19 | 10 |
 | [tb_fat_vacinacao](../schema/tables/fatos/tb_fat_vacinacao.md) | 35 | co_seq_fat_vacinacao | 16 | 8 |
-| [tb_fat_visita_domiciliar](../schema/tables/fatos/tb_fat_visita_domiciliar.md) | 76 | co_seq_fat_visita_domiciliar | 17 | 8 |
+| [tb_fat_visita_domiciliar](../schema/tables/fatos/tb_fat_visita_domiciliar.md) | 75 | co_seq_fat_visita_domiciliar | 17 | 8 |
 | [tb_fat_atd_ind_procedimentos](../schema/tables/fatos/tb_fat_atd_ind_procedimentos.md) | 28 | co_seq_fat_atend_ind_proced | 20 | 7 |
 | [tb_fat_proced_atend](../schema/tables/fatos/tb_fat_proced_atend.md) | 44 | co_seq_fat_proced_atend | 16 | 7 |
-| [tb_fat_cad_individual](../schema/tables/fatos/tb_fat_cad_individual.md) | 153 | co_seq_fat_cad_individual | 36 | 6 |
+| [tb_fat_cad_individual](../schema/tables/fatos/tb_fat_cad_individual.md) | 152 | co_seq_fat_cad_individual | 36 | 6 |
 | [tb_fat_proced_atend_proced](../schema/tables/fatos/tb_fat_proced_atend_proced.md) | 23 | co_seq_fat_proced_atend_proced | 14 | 5 |
 | [tb_fat_atend_odonto_proced](../schema/tables/fatos/tb_fat_atend_odonto_proced.md) | 28 | co_seq_fat_atend_odonto_proced | 19 | 3 |
 | [tb_fat_atd_ind_problemas](../schema/tables/fatos/tb_fat_atd_ind_problemas.md) | 30 | co_seq_fat_atend_ind_problemas | 19 | 2 |
@@ -349,29 +366,22 @@
 | [tb_fat_atvdd_coletiva_int](../schema/tables/fatos/tb_fat_atvdd_coletiva_int.md) | 41 | co_seq_fat_atvdd_cltv_int | 11 | 0 |
 | [tb_fat_atvdd_coletiva_propart](../schema/tables/fatos/tb_fat_atvdd_coletiva_propart.md) | 16 | co_seq_fat_atvdd_cltv_propart | 12 | 0 |
 | [tb_fat_avaliacao_elegibilidade](../schema/tables/fatos/tb_fat_avaliacao_elegibilidade.md) | 92 | co_seq_fat_avaliacao_elegibldd | 33 | 0 |
-| [tb_fat_cad_domiciliar](../schema/tables/fatos/tb_fat_cad_domiciliar.md) | 71 | co_seq_fat_cad_domiciliar | 28 | 0 |
+| [tb_fat_cad_domiciliar](../schema/tables/fatos/tb_fat_cad_domiciliar.md) | 70 | co_seq_fat_cad_domiciliar | 28 | 0 |
 | [tb_fat_cidadao](../schema/tables/fatos/tb_fat_cidadao.md) | 38 | co_seq_fat_cidadao | 12 | 0 |
 | [tb_fat_cidadao_aldeado](../schema/tables/fatos/tb_fat_cidadao_aldeado.md) | 16 | co_seq_fat_cidadao_aldeado | 5 | 0 |
-| [tb_fat_cidadao_territorio](../schema/tables/fatos/tb_fat_cidadao_territorio.md) | 17 | co_seq_fat_cidadao_territorio | 4 | 0 |
-| [tb_fat_cnslddo_ciddo_fai_cid](../schema/tables/fatos/tb_fat_cnslddo_ciddo_fai_cid.md) | 3 | co_seq_fat_cnsldo_cido_fai_cid | 1 | 0 |
 | [tb_fat_complementar](../schema/tables/fatos/tb_fat_complementar.md) | 33 | co_seq_fat_complementar | 13 | 0 |
 | [tb_fat_consolidado_cidadao_fad](../schema/tables/fatos/tb_fat_consolidado_cidadao_fad.md) | 4 | co_seq_fat_conslddo_ciddo_fad | 0 | 0 |
-| [tb_fat_consolidado_cidadao_fai](../schema/tables/fatos/tb_fat_consolidado_cidadao_fai.md) | 26 | co_seq_fat_conslddo_ciddo_fai | 1 | 0 |
 | [tb_fat_consolidado_cidadao_fao](../schema/tables/fatos/tb_fat_consolidado_cidadao_fao.md) | 4 | co_seq_fat_conslddo_ciddo_fao | 1 | 0 |
-| [tb_fat_consolidado_cidadao_fci](../schema/tables/fatos/tb_fat_consolidado_cidadao_fci.md) | 21 | co_seq_fat_conslddo_ciddo_fci | 1 | 0 |
-| [tb_fat_consolidado_cidadao_fp](../schema/tables/fatos/tb_fat_consolidado_cidadao_fp.md) | 6 | co_seq_fat_conslddo_ciddo_fp | 1 | 0 |
-| [tb_fat_consolidado_cidadao_fvd](../schema/tables/fatos/tb_fat_consolidado_cidadao_fvd.md) | 4 | co_seq_fat_conslddo_ciddo_fvd | 1 | 0 |
+| [tb_fat_consolidado_cidadao_fp](../schema/tables/fatos/tb_fat_consolidado_cidadao_fp.md) | 4 | co_seq_fat_conslddo_ciddo_fp | 1 | 0 |
 | [tb_fat_cuidado_compartilhado](../schema/tables/fatos/tb_fat_cuidado_compartilhado.md) | 41 | co_seq_fat_cuidado_compartilhd | 27 | 0 |
 | [tb_fat_familia](../schema/tables/fatos/tb_fat_familia.md) | 20 | co_seq_fat_familia | 5 | 0 |
-| [tb_fat_familia_territorio](../schema/tables/fatos/tb_fat_familia_territorio.md) | 19 | co_seq_fat_familia_territorio | 6 | 0 |
 | [tb_fat_fichas](../schema/tables/fatos/tb_fat_fichas.md) | 10 | co_seq_fat_fichas | 7 | 0 |
 | [tb_fat_ivcf](../schema/tables/fatos/tb_fat_ivcf.md) | 28 | co_seq_fat_ivcf | 9 | 0 |
 | [tb_fat_marca_consumo_alimnt](../schema/tables/fatos/tb_fat_marca_consumo_alimnt.md) | 65 | co_seq_fat_marca_con_almnt | 14 | 0 |
 | [tb_fat_op_acompanhamento_idosa](../schema/tables/fatos/tb_fat_op_acompanhamento_idosa.md) | 4 | co_seq_fat_op_acomp_idosa | 1 | 0 |
+| [tb_fat_problema_condicao](../schema/tables/fatos/tb_fat_problema_condicao.md) | 37 | co_seq_fat_problema_condicao | 20 | 0 |
 | [tb_fat_procedimento](../schema/tables/fatos/tb_fat_procedimento.md) | 19 | co_seq_fat_procedimento | 9 | 0 |
-| [tb_fat_rel_op_crianca](../schema/tables/fatos/tb_fat_rel_op_crianca.md) | 14 | co_seq_fat_rel_op_crianca | 1 | 0 |
 | [tb_fat_rel_op_gestante](../schema/tables/fatos/tb_fat_rel_op_gestante.md) | 16 | co_seq_fat_rel_op_gestante | 1 | 0 |
-| [tb_fat_rel_op_risco_cardio](../schema/tables/fatos/tb_fat_rel_op_risco_cardio.md) | 18 | co_seq_fat_rel_op_risco_cardio | 1 | 0 |
 | [tb_fat_solicitacao_oci](../schema/tables/fatos/tb_fat_solicitacao_oci.md) | 19 | co_seq_fat_oci | 14 | 0 |
 
 ## fichas_cds (43)
@@ -530,7 +540,7 @@
 | [tl_cidadao](../schema/tables/log_revisoes/tl_cidadao.md) | 84 | co_revisao, co_seq_cidadao | 0 | 0 |
 | [tl_cidadao_grupo](../schema/tables/log_revisoes/tl_cidadao_grupo.md) | 11 | co_revisao, co_seq_cidadao_grupo | 0 | 0 |
 | [tl_cidadao_grupo_ativ_col](../schema/tables/log_revisoes/tl_cidadao_grupo_ativ_col.md) | 11 | co_revisao, co_seq_cidadao_grupo | 0 | 0 |
-| [tl_cidadao_nucleo_familiar](../schema/tables/log_revisoes/tl_cidadao_nucleo_familiar.md) | 13 | co_revisao, co_seq_cidadao_nucleo_familiar | 0 | 0 |
+| [tl_cidadao_nucleo_familiar](../schema/tables/log_revisoes/tl_cidadao_nucleo_familiar.md) | 14 | co_revisao, co_seq_cidadao_nucleo_familiar | 0 | 0 |
 | [tl_cidadao_vinculacao_equipe](../schema/tables/log_revisoes/tl_cidadao_vinculacao_equipe.md) | 17 | co_revisao, co_seq_cidadao_vinculacao_eqp | 0 | 0 |
 | [tl_cns](../schema/tables/log_revisoes/tl_cns.md) | 6 | co_revisao, co_seq_cns | 0 | 0 |
 | [tl_compartilhamento_prontuario](../schema/tables/log_revisoes/tl_compartilhamento_prontuario.md) | 7 | co_revisao, co_seq_compartilha_prontuario | 0 | 0 |
@@ -683,17 +693,16 @@
 | [tl_usuario](../schema/tables/log_revisoes/tl_usuario.md) | 11 | co_revisao, co_seq_usuario | 0 | 0 |
 | [tl_vacinacao](../schema/tables/log_revisoes/tl_vacinacao.md) | 9 | co_revisao, co_seq_vacinacao | 0 | 0 |
 
-## outras (440)
+## outras (443)
 
 | Tabela | Colunas | PK | FKs | Consultas |
 |---|--:|---|--:|--:|
-| [tb_acomp_cidadaos_vinculados](../schema/tables/outras/tb_acomp_cidadaos_vinculados.md) | 60 | co_seq_acomp_cidadaos_vinc | 0 | 17 |
 | [tb_importacao_bolsa_familia](../schema/tables/outras/tb_importacao_bolsa_familia.md) | 10 | co_seq_importaca_bolsa_familia | 2 | 4 |
 | [tb_imunobiologico](../schema/tables/outras/tb_imunobiologico.md) | 7 | co_imunobiologico | 1 | 1 |
 | [tb_imunobiologico_fabricante](../schema/tables/outras/tb_imunobiologico_fabricante.md) | 7 | co_seq_imunobiologico_fabrcnt | 0 | 1 |
 | [tb_imunobiologico_lote](../schema/tables/outras/tb_imunobiologico_lote.md) | 9 | co_seq_imunobiologico_lote | 3 | 1 |
 | [tb_unidade_saude](../schema/tables/outras/tb_unidade_saude.md) | 25 | co_seq_unidade_saude | 5 | 1 |
-| [tb_acomp_cidadaos_vinc_prcs](../schema/tables/outras/tb_acomp_cidadaos_vinc_prcs.md) | 5 | co_seq_acomp_cidad_vinc_prcs | 0 | 0 |
+| [tb_acomp_cidadaos_vinc_pend](../schema/tables/outras/tb_acomp_cidadaos_vinc_pend.md) | 3 | co_seq_acomp_cvinc_pend | 0 | 0 |
 | [tb_ad_cidadao](../schema/tables/outras/tb_ad_cidadao.md) | 21 | co_seq_ad_cidadao | 8 | 0 |
 | [tb_ad_destino](../schema/tables/outras/tb_ad_destino.md) | 3 | co_seq_ad_destino | 0 | 0 |
 | [tb_ad_modalidade](../schema/tables/outras/tb_ad_modalidade.md) | 3 | co_seq_ad_modalidade | 0 | 0 |
@@ -709,6 +718,7 @@
 | [tb_agend_compartilhado](../schema/tables/outras/tb_agend_compartilhado.md) | 4 | co_seq_agend_compartilhado | 3 | 0 |
 | [tb_agenda_fixada_ator_papel](../schema/tables/outras/tb_agenda_fixada_ator_papel.md) | 3 | co_seq_ag_fixada_ator_papel | 2 | 0 |
 | [tb_agendado](../schema/tables/outras/tb_agendado.md) | 23 | co_seq_agendado | 7 | 0 |
+| [tb_agendamento_visita_imovel](../schema/tables/outras/tb_agendamento_visita_imovel.md) | 4 | co_seq_agendamento_visita | 2 | 0 |
 | [tb_aldeia](../schema/tables/outras/tb_aldeia.md) | 12 | co_aldeia | 4 | 0 |
 | [tb_alergia](../schema/tables/outras/tb_alergia.md) | 7 | co_seq_alergia | 4 | 0 |
 | [tb_alergia_evolucao](../schema/tables/outras/tb_alergia_evolucao.md) | 11 | co_seq_alergia_evolucao | 4 | 0 |
@@ -761,7 +771,7 @@
 | [tb_cfg_agenda_detalhe](../schema/tables/outras/tb_cfg_agenda_detalhe.md) | 6 | co_seq_config_agenda_detalhe | 3 | 0 |
 | [tb_cfg_agenda_municipal](../schema/tables/outras/tb_cfg_agenda_municipal.md) | 3 | co_seq_cfg_agenda_municipal | 1 | 0 |
 | [tb_cfg_agenda_online_detalhe](../schema/tables/outras/tb_cfg_agenda_online_detalhe.md) | 7 | co_seq_cfg_agenda_online_dtlh | 2 | 0 |
-| [tb_cfg_certificado](../schema/tables/outras/tb_cfg_certificado.md) | 12 | co_seq_cfg_certificado | 2 | 0 |
+| [tb_cfg_certificado](../schema/tables/outras/tb_cfg_certificado.md) | 14 | co_seq_cfg_certificado | 2 | 0 |
 | [tb_chamada_painel](../schema/tables/outras/tb_chamada_painel.md) | 6 | co_seq_chamada_painel | 3 | 0 |
 | [tb_ciap](../schema/tables/outras/tb_ciap.md) | 7 | co_seq_ciap | 0 | 0 |
 | [tb_ciap_capitulo](../schema/tables/outras/tb_ciap_capitulo.md) | 3 | co_seq_ciap_capitulo | 0 | 0 |
@@ -813,6 +823,7 @@
 | [tb_encaminhamento](../schema/tables/outras/tb_encaminhamento.md) | 10 | co_seq_encaminhamento | 6 | 0 |
 | [tb_envio_log](../schema/tables/outras/tb_envio_log.md) | 5 | co_seq_envio_log | 0 | 0 |
 | [tb_envio_rnds](../schema/tables/outras/tb_envio_rnds.md) | 17 | co_seq_envio_rnds | 0 | 0 |
+| [tb_errata_nota_complementar](../schema/tables/outras/tb_errata_nota_complementar.md) | 6 | co_seq_errata_nota_complementr | 2 | 0 |
 | [tb_escolaridade](../schema/tables/outras/tb_escolaridade.md) | 3 | co_escolaridade | 0 | 0 |
 | [tb_especialidade_sisreg](../schema/tables/outras/tb_especialidade_sisreg.md) | 7 | co_especialidade_sisreg | 4 | 0 |
 | [tb_especialidades_esus_reg](../schema/tables/outras/tb_especialidades_esus_reg.md) | 6 | co_seq_espec_esus_reg | 0 | 0 |
@@ -821,6 +832,7 @@
 | [tb_estagio_unificacao_base](../schema/tables/outras/tb_estagio_unificacao_base.md) | 16 | co_seq_estagio_unificacao_base | 1 | 0 |
 | [tb_estrategia_vacinacao](../schema/tables/outras/tb_estrategia_vacinacao.md) | 6 | co_estrategia_vacinacao | 0 | 0 |
 | [tb_etl_auxiliar_number](../schema/tables/outras/tb_etl_auxiliar_number.md) | 2 | co_seq_etl_auxiliar_number | 0 | 0 |
+| [tb_etl_cidadaos_vinc_prcs](../schema/tables/outras/tb_etl_cidadaos_vinc_prcs.md) | 5 | co_seq_acomp_cidad_vinc_prcs | 0 | 0 |
 | [tb_etnia](../schema/tables/outras/tb_etnia.md) | 3 | co_etnia | 0 | 0 |
 | [tb_evolucao_avaliacao](../schema/tables/outras/tb_evolucao_avaliacao.md) | 3 | co_atend_prof | 1 | 0 |
 | [tb_evolucao_dente](../schema/tables/outras/tb_evolucao_dente.md) | 8 | co_seq_evolucao_dente | 7 | 0 |
@@ -1075,6 +1087,7 @@
 | [tb_tipo_consulta_odonto](../schema/tables/outras/tb_tipo_consulta_odonto.md) | 3 | co_tipo_consulta_odonto | 0 | 0 |
 | [tb_tipo_dado_transp](../schema/tables/outras/tb_tipo_dado_transp.md) | 2 | co_tipo_dado_transp | 0 | 0 |
 | [tb_tipo_destino_lixo](../schema/tables/outras/tb_tipo_destino_lixo.md) | 2 | co_tipo_destino_lixo | 0 | 0 |
+| [tb_tipo_documento_cidadao](../schema/tables/outras/tb_tipo_documento_cidadao.md) | 2 | co_tipo_documento_cidadao | 0 | 0 |
 | [tb_tipo_domicilio](../schema/tables/outras/tb_tipo_domicilio.md) | 2 | co_tipo_domicilio | 0 | 0 |
 | [tb_tipo_edema](../schema/tables/outras/tb_tipo_edema.md) | 3 | co_tipo_edema | 0 | 0 |
 | [tb_tipo_encam_interno](../schema/tables/outras/tb_tipo_encam_interno.md) | 2 | co_tipo_encam_interno | 0 | 0 |
@@ -1222,7 +1235,7 @@
 | [rl_unidade_saude_tipo_servico](../schema/tables/relacionamentos/rl_unidade_saude_tipo_servico.md) | 2 | tp_servico, co_ator_papel | 2 | 0 |
 | [rl_via_adm_local_apl_vacina](../schema/tables/relacionamentos/rl_via_adm_local_apl_vacina.md) | 2 | co_via_adm_vacina, co_local_apl_vacina | 0 | 0 |
 
-## visoes (6)
+## visoes (7)
 
 | Tabela | Colunas | PK | FKs | Consultas |
 |---|--:|---|--:|--:|
@@ -1230,5 +1243,6 @@
 | [mv_busca_ativa_vacina_adulto](../schema/tables/visoes/mv_busca_ativa_vacina_adulto.md) | 58 | - | 0 | 0 |
 | [mv_busca_ativa_vacina_covid](../schema/tables/visoes/mv_busca_ativa_vacina_covid.md) | 57 | - | 0 | 0 |
 | [mv_busca_ativa_vacina_crianca](../schema/tables/visoes/mv_busca_ativa_vacina_crianca.md) | 59 | - | 0 | 0 |
+| [mv_busca_ativa_vacina_gest_mrt](../schema/tables/visoes/mv_busca_ativa_vacina_gest_mrt.md) | 58 | - | 0 | 0 |
 | [mv_busca_ativa_vacina_gest_prp](../schema/tables/visoes/mv_busca_ativa_vacina_gest_prp.md) | 58 | - | 0 | 0 |
 | [mv_busca_ativa_vacina_idoso](../schema/tables/visoes/mv_busca_ativa_vacina_idoso.md) | 58 | - | 0 | 0 |

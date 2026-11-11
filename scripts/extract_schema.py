@@ -55,7 +55,9 @@ GROUPS = [
     ("rl_", "relacionamentos"),    # tabelas de ligação N:N
     ("tb_fat_", "fatos"),
     ("tb_dim_", "dimensoes"),
+    ("tb_mrt_", "data_marts"),     # marts por linha de cuidado, calculados pelo ETL (5.5.32+)
     ("tb_cds_", "fichas_cds"),
+    ("tb_ods_cidadaos_vinculados", "cadastro_e_territorio"),
     ("tb_cidadao", "cadastro_e_territorio"),
     ("tb_equipe", "cadastro_e_territorio"),
 ]

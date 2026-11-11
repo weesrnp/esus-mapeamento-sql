@@ -1,7 +1,7 @@
 -- titulo: Indicador C3: Validação Nominal por Pessoa (Pré-Natal)
 -- categoria: indicadores_cofinanciamento
 -- indicador: C3
--- tabelas: tb_acomp_cidadaos_vinculados, tb_dim_cbo, tb_dim_imunobiologico, tb_dim_procedimento, tb_fat_atd_ind_procedimentos, tb_fat_atendimento_individual, tb_fat_atendimento_odonto, tb_fat_cidadao_pec, tb_fat_proced_atend, tb_fat_proced_atend_proced, tb_fat_vacinacao, tb_fat_vacinacao_vacina
+-- tabelas: tb_ods_cidadaos_vinculados, tb_dim_cbo, tb_dim_imunobiologico, tb_dim_procedimento, tb_fat_atd_ind_procedimentos, tb_fat_atendimento_individual, tb_fat_atendimento_odonto, tb_fat_cidadao_pec, tb_fat_proced_atend, tb_fat_proced_atend_proced, tb_fat_vacinacao, tb_fat_vacinacao_vacina
 -- parametros: cpf, fim, ini
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: PA e peso/altura contam registros, não dias distintos; consulta odontológica inclui CBO 3224 (ASB/TSB); gestante sem DUM não entra
@@ -16,7 +16,7 @@ WITH vinc AS (
     SELECT DISTINCT ON (co_cidadao) co_cidadao, nu_ine_vinc_equipe AS ine,
            nullif(regexp_replace(coalesce(nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns
-    FROM tb_acomp_cidadaos_vinculados
+    FROM tb_ods_cidadaos_vinculados
     WHERE regexp_replace(coalesce(nu_cpf_cidadao, ''), '\D', '', 'g') = :'cpf' AND co_cidadao IS NOT NULL
     ORDER BY co_cidadao, nu_ine_vinc_equipe
 ),

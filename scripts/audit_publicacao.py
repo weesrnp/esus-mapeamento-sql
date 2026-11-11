@@ -23,7 +23,8 @@ TEXT = {".md", ".sql", ".py", ".json", ".html", ".txt", ".yml", ".yaml", ".toml"
 REGRAS = {
     "cpf formatado": re.compile(r"\b\d{3}\.\d{3}\.\d{3}-\d{2}\b"),
     "cns/cpf literal": re.compile(r"(?<![\d_])(?!12345678901\b|00000000000\b)\d{11}(?!\d)|(?<![\d_])\d{15}(?!\d)"),
-    "ip": re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b"),
+    # octetos de 0 a 255 sem zero à esquerda: código SIGTAP com pontos (02.02.01.050-3) não é IP
+    "ip": re.compile(r"(?<![\d.])(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?![\d.])"),
     "credencial": re.compile(r"(password|senha|passwd|secret|token|api[_-]?key)\s*[:=]\s*(?!os\.|\"\.\.\.\"|<)\S{4,}", re.I),
     "ine literal": re.compile(r"'0000(?!000000)\d{6}'"),
     "caminho local": re.compile(r"[A-Z]:\\(?:Users|Projetos|reverse)\\", re.I),

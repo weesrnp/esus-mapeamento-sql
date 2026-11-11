@@ -10,4 +10,4 @@ Colunas: 3
 | 2 | `nu_identificador` | `character varying(2)` | sim |  |
 | 3 | `ds_situacao_problema` | `character varying(50)` | sim |  |
 
-Referenciada por: `tb_fat_atd_ind_problemas`, `tb_fat_atend_dom_prob_cond`, `tb_fat_atend_odonto_problemas`
+Referenciada por: `tb_fat_atd_ind_problemas`, `tb_fat_atend_dom_prob_cond`, `tb_fat_atend_odonto_problemas`, `tb_fat_problema_condicao`

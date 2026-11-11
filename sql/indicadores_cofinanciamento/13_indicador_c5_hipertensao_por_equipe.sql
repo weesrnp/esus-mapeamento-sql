@@ -1,7 +1,7 @@
 -- titulo: Indicador C5: Validação Agregada por Equipe (Hipertensão)
 -- categoria: indicadores_cofinanciamento
 -- indicador: C5
--- tabelas: tb_acomp_cidadaos_vinculados, tb_dim_cbo, tb_dim_equipe, tb_dim_procedimento, tb_fat_atendimento_individual, tb_fat_cidadao_pec, tb_fat_proced_atend, tb_fat_proced_atend_proced, tb_fat_visita_domiciliar
+-- tabelas: tb_ods_cidadaos_vinculados, tb_dim_cbo, tb_dim_equipe, tb_dim_procedimento, tb_fat_atendimento_individual, tb_fat_cidadao_pec, tb_fat_proced_atend, tb_fat_proced_atend_proced, tb_fat_visita_domiciliar
 -- parametros: fim, ine_1, ine_2, ine_3, ini12, ini6
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: não entrega o numerador combinado (A+B+C+D)
@@ -15,7 +15,7 @@ WITH vinc AS (            -- vinculados às 3 eSF, com as 3 chaves da pessoa
     SELECT DISTINCT ON (co_cidadao) co_cidadao, nu_ine_vinc_equipe AS ine,
            nullif(regexp_replace(coalesce(nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns
-    FROM tb_acomp_cidadaos_vinculados
+    FROM tb_ods_cidadaos_vinculados
     WHERE nu_ine_vinc_equipe IN (:'ine_1', :'ine_2', :'ine_3') AND co_cidadao IS NOT NULL
     ORDER BY co_cidadao, nu_ine_vinc_equipe
 ),

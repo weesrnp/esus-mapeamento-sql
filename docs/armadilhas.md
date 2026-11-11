@@ -19,6 +19,8 @@ Pontos que costumam gerar número errado. Vale conferir antes de publicar um ind
 15. **Tabelas `tl_` e `ta_` são histórico.** `tl_*` guarda cada revisão de uma `tb_*` (Envers: `co_revisao`, `co_tipo_revisao`) e `ta_*` é trilha de auditoria por trigger. Para o dado vigente, leia a `tb_*`; ler o log traz linhas repetidas e registros excluídos.
 16. **Parâmetro de texto no psql vai com aspas.** `:ine_1` vira número e um INE como `0000123456` perde os zeros; use `:'ine_1'`. Datas `YYYYMMDD` comparadas com `co_dim_tempo` ficam sem aspas.
 17. **PostgreSQL 9.6.** Muitas instalações ainda rodam 9.6. Dentro de CTE com `UNION`, dê tipo a literal de texto (`'x'::text`); evite recursos de versões novas (`GENERATED`, SQL/JSON path).
+18. **Tabela de vinculados renomeada na 5.6.1.** A partir da migração 5.5.32, `tb_acomp_cidadaos_vinculados` se chama `tb_ods_cidadaos_vinculados`, com as mesmas colunas (menos `st_reprocessar_vinculo`). Consulta escrita para uma versão quebra na outra. Confira a versão do PEC antes de rodar e veja [novidades-pec-5.6.1.md](novidades-pec-5.6.1.md).
+19. **Cidadão nulo na fato de problemas.** Em `tb_fat_problema_condicao` (5.6.1), `co_fat_cidadao_pec` fica nulo até o ETL resolver a referência. Um `JOIN` direto perde essas linhas; use `nu_cpf_cidadao` ou `nu_cns`, que já vêm na tabela, para casar a pessoa.
 
 ## Padrão para evitar a explosão de linhas
 

@@ -1,8 +1,8 @@
-# tb_acomp_cidadaos_vinculados
+# tb_ods_cidadaos_vinculados
 
 Tipo: tabela  
-Grupo: outras  
-Colunas: 60
+Grupo: cadastro_e_territorio  
+Colunas: 59
 
 | # | Coluna | Tipo | Obrigatória | Chave |
 |--:|---|---|:-:|---|
@@ -65,4 +65,3 @@ Colunas: 60
 | 57 | `no_polo_base_domicilio` | `character varying(100)` | não |  |
 | 58 | `no_aldeia_domicilio` | `character varying(100)` | não |  |
 | 59 | `co_fat_cidadao_pec` | `bigint` | não |  |
-| 60 | `st_reprocessar_vinculo` | `integer` | sim |  |

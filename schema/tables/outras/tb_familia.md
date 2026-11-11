@@ -25,3 +25,5 @@ Colunas: 19
 | 17 | `st_informacao_suficiente` | `integer` | sim |  |
 | 18 | `st_domicilio_ativo` | `integer` | sim |  |
 | 19 | `dt_atualizacao_fcd` | `timestamp with time zone` | não |  |
+
+Referenciada por: `tb_cidadao_nucleo_familiar`

@@ -1,6 +1,6 @@
 -- titulo: Painel de Produção por Público-Alvo (Crianças, Idosos e Adultos de 40 a 74 Anos)
 -- categoria: indicadores_cofinanciamento
--- tabelas: tb_acomp_cidadaos_vinculados, tb_cidadao, tb_fat_atendimento_individual, tb_fat_cidadao_pec
+-- tabelas: tb_ods_cidadaos_vinculados, tb_cidadao, tb_fat_atendimento_individual, tb_fat_cidadao_pec
 -- parametros: fim, ini
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: painel de produção, não é indicador: não aplica o critério das fichas do ProAPS (IVCF-20, estratificação de risco etc.)
@@ -15,7 +15,7 @@ WITH vinc AS (
     SELECT DISTINCT ON (co_cidadao) co_cidadao, dt_nascimento_cidadao AS nasc,
            nullif(regexp_replace(coalesce(nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns
-    FROM tb_acomp_cidadaos_vinculados
+    FROM tb_ods_cidadaos_vinculados
     WHERE co_cidadao IS NOT NULL AND dt_nascimento_cidadao IS NOT NULL
      AND co_cidadao NOT IN (SELECT co_seq_cidadao FROM tb_cidadao WHERE st_faleceu = 1)
     ORDER BY co_cidadao, nu_ine_vinc_equipe

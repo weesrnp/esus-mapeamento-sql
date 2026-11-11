@@ -1,6 +1,6 @@
 -- titulo: Vínculo e Acompanhamento: Dimensão Cadastro (X) por Equipe
 -- categoria: indicadores_cofinanciamento
--- tabelas: tb_acomp_cidadaos_vinculados, tb_dim_tipo_saida_cadastro, tb_fat_cad_dom_familia, tb_fat_cad_individual, tb_fat_cidadao_pec
+-- tabelas: tb_ods_cidadaos_vinculados, tb_dim_tipo_saida_cadastro, tb_fat_cad_dom_familia, tb_fat_cad_individual, tb_fat_cidadao_pec
 -- parametros: fim, ine_1, pessoas_parametro
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: não confere validação no SISAB nem no CadSUS; o domicílio (MICDT) é ligado pelo responsável familiar da FCI
@@ -19,7 +19,7 @@ vinc AS (
     SELECT DISTINCT ON (co_cidadao) co_cidadao, nu_ine_vinc_equipe AS ine,
            nullif(regexp_replace(coalesce(nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns
-    FROM tb_acomp_cidadaos_vinculados
+    FROM tb_ods_cidadaos_vinculados
     WHERE nu_ine_vinc_equipe = :'ine_1' AND co_cidadao IS NOT NULL
     ORDER BY co_cidadao, dt_ultima_atualizacao_cidadao DESC NULLS LAST
 ),

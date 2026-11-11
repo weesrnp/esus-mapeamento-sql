@@ -2,7 +2,7 @@
 
 Tipo: tabela  
 Grupo: fatos  
-Colunas: 76
+Colunas: 75
 
 | # | Coluna | Tipo | Obrigatória | Chave |
 |--:|---|---|:-:|---|
@@ -78,7 +78,6 @@ Colunas: 76
 | 70 | `nu_latitude` | `double precision` | não |  |
 | 71 | `nu_longitude` | `double precision` | não |  |
 | 72 | `co_uuid_origem_fcd` | `character varying(96)` | não |  |
-| 73 | `st_processado_origem_fcd` | `integer` | não |  |
 | 74 | `st_acomp_pessoa_idosa` | `integer` | não |  |
 | 75 | `co_dim_just_nao_possui_cpf` | `bigint` | não | FK → tb_dim_just_nao_possui_cpf |
 | 76 | `st_nao_possui_cpf` | `integer` | não |  |

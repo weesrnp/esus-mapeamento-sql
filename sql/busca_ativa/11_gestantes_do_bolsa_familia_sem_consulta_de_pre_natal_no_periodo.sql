@@ -1,6 +1,6 @@
 -- titulo: Gestantes do Bolsa Família sem Consulta de Pré-Natal no Período
 -- categoria: busca_ativa
--- tabelas: tb_acomp_cidadaos_vinculados, tb_cidadao, tb_cidadao_bolsa_familia, tb_dim_cbo, tb_fat_atendimento_individual, tb_fat_cidadao_pec, tb_importacao_bolsa_familia
+-- tabelas: tb_ods_cidadaos_vinculados, tb_cidadao, tb_cidadao_bolsa_familia, tb_dim_cbo, tb_fat_atendimento_individual, tb_fat_cidadao_pec, tb_importacao_bolsa_familia
 -- parametros: fim, ini
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: documento do PBF casado pelo tipo lido no texto de tp_documento (tipo vazio ou desconhecido casa com NIS, CPF e CNS); só entra gestante com DUM registrada em atendimento (a que a UBS ainda não captou não aparece)
@@ -36,7 +36,7 @@ benef AS (                -- o arquivo do PBF não liga ao DW: casa o documento 
 vinc AS (                 -- equipe e microárea do vínculo atual (sem vínculo: ine nulo)
     SELECT DISTINCT ON (co_cidadao) co_cidadao, nu_ine_vinc_equipe AS ine,
            coalesce(nu_micro_area_domicilio, nu_micro_area_tb_cidadao) AS microarea
-    FROM tb_acomp_cidadaos_vinculados WHERE co_cidadao IN (SELECT co_cidadao FROM benef)
+    FROM tb_ods_cidadaos_vinculados WHERE co_cidadao IN (SELECT co_cidadao FROM benef)
     ORDER BY co_cidadao, dt_ultima_atualizacao_cidadao DESC NULLS LAST
 ),
 mapa AS (

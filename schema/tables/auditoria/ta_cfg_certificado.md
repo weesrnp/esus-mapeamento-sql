@@ -2,7 +2,7 @@
 
 Tipo: tabela  
 Grupo: auditoria  
-Colunas: 15
+Colunas: 17
 
 | # | Coluna | Tipo | Obrigatória | Chave |
 |--:|---|---|:-:|---|
@@ -21,3 +21,5 @@ Colunas: 15
 | 13 | `st_habilitado_rnds` | `integer` | não |  |
 | 14 | `st_habilitado_cadsus` | `integer` | não |  |
 | 15 | `st_habilitado_farmacia` | `integer` | não |  |
+| 16 | `st_habilitado_sinan` | `integer` | não |  |
+| 17 | `st_habilitado_esus_regulacao` | `integer` | não |  |

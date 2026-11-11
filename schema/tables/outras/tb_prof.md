@@ -32,4 +32,4 @@ Colunas: 25
 | 26 | `no_social_profissional` | `character varying(255)` | não |  |
 | 27 | `no_civil_profissional` | `character varying(255)` | não |  |
 
-Referenciada por: `rl_prof_municipio`, `tb_arquivo`, `tb_atestado_modelo`, `tb_ativacao_agendamento_online`, `tb_ator_papel`, `tb_cuidado_compartilhado`, `tb_estagio`, `tb_historico_unificacao`, `tb_importacao_bolsa_familia`, `tb_importacao_cnes`, `tb_lembrete`, `tb_lotacao`, `tb_prof_historico_cns`
+Referenciada por: `rl_prof_municipio`, `tb_agendamento_visita_imovel`, `tb_arquivo`, `tb_atestado_modelo`, `tb_ativacao_agendamento_online`, `tb_ator_papel`, `tb_cuidado_compartilhado`, `tb_estagio`, `tb_historico_unificacao`, `tb_importacao_bolsa_familia`, `tb_importacao_cnes`, `tb_lembrete`, `tb_lotacao`, `tb_prof_historico_cns`

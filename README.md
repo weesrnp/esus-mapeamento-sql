@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="docs/img/capa.svg" alt="esus-mapeamento-sql: mapa do banco PostgreSQL do e-SUS APS PEC 5.5.28 e catálogo de consultas SQL" width="100%">
+  <img src="docs/img/capa.svg" alt="esus-mapeamento-sql: mapa do banco PostgreSQL do e-SUS APS PEC 5.6.1 e catálogo de consultas SQL" width="100%">
 </p>
 
 <p align="center">
-  <img alt="e-SUS APS PEC 5.5.28" src="https://img.shields.io/badge/e--SUS%20APS%20PEC-5.5.28-0a7d5a">
+  <img alt="e-SUS APS PEC 5.6.1" src="https://img.shields.io/badge/e--SUS%20APS%20PEC-5.6.1-0a7d5a">
   <img alt="PostgreSQL 9.6 a 16" src="https://img.shields.io/badge/PostgreSQL-9.6%20a%2016-336791?logo=postgresql&logoColor=white">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white">
   <img alt="psycopg 3" src="https://img.shields.io/badge/psycopg-3-4a6390">
@@ -19,6 +19,8 @@ Pensado em quem trabalha com TI na saúde pública e mexe com o e-SUS PEC no dia
 O repositório tem duas partes. A primeira é um mapa de todas as tabelas do PEC, com o que cada coluna guarda e como as tabelas se ligam. A segunda são consultas SQL prontas para coisas que a gente faz o tempo todo na Atenção Primária: achar quem precisa de busca ativa, acompanhar a vacinação, arrumar o cadastro e calcular os indicadores que entram no repasse federal.
 
 Nenhum dado de paciente foi usado. O mapa saiu só da estrutura do banco, e as consultas foram testadas no PostgreSQL 9.6 e no 16.
+
+**Versão do PEC:** o mapa e as consultas acompanham o PEC 5.6.1. Quem ainda está na 5.5.28 encontra a versão anterior na release [v1.0.0](https://github.com/weesrnp/esus-mapeamento-sql/releases/tag/v1.0.0). O que mudou no banco entre as duas está em [`docs/novidades-pec-5.6.1.md`](docs/novidades-pec-5.6.1.md).
 
 ## Sumário
 
@@ -39,12 +41,12 @@ Nenhum dado de paciente foi usado. O mapa saiu só da estrutura do banco, e as c
 
 | O quê | Quantos | Onde |
 |---|--:|---|
-| Tabelas do PEC 5.5.28 | 1.180 | [`schema/tables/`](schema/tables) |
-| Visões materializadas (`mv_`) | 6 | [`schema/tables/visoes/`](schema/tables/visoes) |
-| Colunas descritas | 10.648 | [`schema/schema.json`](schema/schema.json) |
-| Chaves estrangeiras | 1.668 | [`schema/schema.json`](schema/schema.json) |
+| Tabelas do PEC 5.6.1 | 1.188 | [`schema/tables/`](schema/tables) |
+| Visões materializadas (`mv_`) | 7 | [`schema/tables/visoes/`](schema/tables/visoes) |
+| Colunas descritas | 10.796 | [`schema/schema.json`](schema/schema.json) |
+| Chaves estrangeiras | 1.688 | [`schema/schema.json`](schema/schema.json) |
 | Consultas SQL | 41, em 5 categorias | [`sql/`](sql) |
-| Armadilhas do banco | 16 | [`docs/armadilhas.md`](docs/armadilhas.md) |
+| Armadilhas do banco | 19 | [`docs/armadilhas.md`](docs/armadilhas.md) |
 | Nós e ligações no grafo | 158 e 538 | [`graph/`](graph) |
 | Testes automatizados | 15 | [`tests/`](tests) |
 
@@ -68,7 +70,7 @@ Todo arquivo começa com um cabeçalho igual a este, e é dele que saem os índi
 -- titulo: Indicador C5: Validação Nominal por Pessoa (Hipertensão)
 -- categoria: indicadores_cofinanciamento
 -- indicador: C5
--- tabelas: tb_acomp_cidadaos_vinculados, tb_dim_cbo, tb_dim_equipe, ...
+-- tabelas: tb_ods_cidadaos_vinculados, tb_dim_cbo, tb_dim_equipe, ...
 -- parametros: cpf, fim, ine_1, ine_2, ine_3, ini12, ini6
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: DISTINCT ON sem ORDER BY no CTE alvo; a prática B só olha o atendimento individual
@@ -82,15 +84,16 @@ Separei as tabelas pelo prefixo e pelo papel que elas têm no banco:
 
 | Grupo | Tabelas | O que guarda |
 |---|--:|---|
-| [`fatos`](schema/tables/fatos) | 54 | Fatos do Data Warehouse (`tb_fat_*`) |
+| [`fatos`](schema/tables/fatos) | 47 | Fatos do Data Warehouse (`tb_fat_*`) |
 | [`dimensoes`](schema/tables/dimensoes) | 95 | Dimensões do Data Warehouse (`tb_dim_*`) |
 | [`fichas_cds`](schema/tables/fichas_cds) | 43 | Fichas da Coleta de Dados Simplificada (`tb_cds_*`) |
-| [`cadastro_e_territorio`](schema/tables/cadastro_e_territorio) | 10 | Cidadão, domicílio e vínculo com a equipe |
-| [`outras`](schema/tables/outras) | 440 | O resto das tabelas `tb_` do prontuário |
+| [`data_marts`](schema/tables/data_marts) | 9 | Marts por linha de cuidado que o próprio PEC calcula (`tb_mrt_*`, desde a 5.5.32) |
+| [`cadastro_e_territorio`](schema/tables/cadastro_e_territorio) | 12 | Cidadão, domicílio e vínculo com a equipe (`tb_ods_cidadaos_vinculados`) |
+| [`outras`](schema/tables/outras) | 443 | O resto das tabelas `tb_` do prontuário |
 | [`relacionamentos`](schema/tables/relacionamentos) | 89 | Tabelas de ligação (`rl_`) |
 | [`log_revisoes`](schema/tables/log_revisoes) | 256 | Histórico de alterações dos registros (`tl_`, Envers) |
-| [`auditoria`](schema/tables/auditoria) | 193 | Trilha de auditoria gravada por trigger (`ta_`) |
-| [`visoes`](schema/tables/visoes) | 6 | Visões materializadas (`mv_`) |
+| [`auditoria`](schema/tables/auditoria) | 194 | Trilha de auditoria gravada por trigger (`ta_`) |
+| [`visoes`](schema/tables/visoes) | 7 | Visões materializadas (`mv_`) |
 
 Só entram os prefixos que vêm de fábrica no PEC (`tb_`, `tl_`, `ta_`, `rl_`, `mv_`). Visões que alguém criou numa instalação, como `stg_*` e `vw_*`, ficam de fora, porque o mapa é do sistema e não de um município. O índice completo está em [`docs/indice_tabelas.md`](docs/indice_tabelas.md).
 
@@ -225,7 +228,7 @@ O script procura CPF, CNS, IP, senha, caminho de pasta do seu computador e códi
 
 ## O que você precisa saber antes de usar
 
-- O mapa é da versão 5.5.28 do PEC. Em outras versões pode faltar ou sobrar tabela e coluna, então rode o `extract_schema.py` e o `validate_sql.py` no seu banco antes de confiar numa consulta.
+- O mapa é da versão 5.6.1 do PEC. Em outras versões pode faltar ou sobrar tabela e coluna, então rode o `extract_schema.py` e o `validate_sql.py` no seu banco antes de confiar numa consulta. Na 5.5.28 e anteriores, a tabela de vinculados ainda se chama `tb_acomp_cidadaos_vinculados`: use a release [v1.0.0](https://github.com/weesrnp/esus-mapeamento-sql/releases/tag/v1.0.0).
 - Alguns códigos mudam de uma versão para outra, como tipo de atendimento, desfecho de visita e motivo de saída do cadastro. Por isso as consultas buscam esses valores pela descrição, mas vale conferir na sua instalação.
 - A consulta [`04_funcao_pl_pgsql_no_postgresql.sql`](sql/cadastro_e_territorio/04_funcao_pl_pgsql_no_postgresql.sql) cria a função `fn_validar_cns`. Como ela cria um objeto no banco, não roda em modo somente leitura e está marcada como `status: revisar`. Use num banco de apoio.
 - Os indicadores daqui servem para acompanhar e conferir os números localmente. O resultado que vale é o que o Ministério da Saúde publica com os dados enviados ao SISAB.
@@ -233,8 +236,9 @@ O script procura CPF, CNS, IP, senha, caminho de pasta do seu computador e códi
 ## Mais documentação
 
 - [Índice de consultas](docs/indice_consultas.md): título, indicador, tabelas e parâmetros de cada SQL
-- [Índice de tabelas](docs/indice_tabelas.md): as 1.186 páginas do esquema, por grupo
-- [Armadilhas do banco](docs/armadilhas.md): 16 coisas que costumam dar número errado, como data guardada como número inteiro, linhas que se multiplicam ao juntar subfatos e a mesma pessoa aparecendo várias vezes no DW
+- [Índice de tabelas](docs/indice_tabelas.md): as 1.195 páginas do esquema, por grupo
+- [O que muda no banco com o PEC 5.6.1](docs/novidades-pec-5.6.1.md): tabela renomeada, tabelas apagadas, a fato unificada de problemas e os novos data marts
+- [Armadilhas do banco](docs/armadilhas.md): 19 coisas que costumam dar número errado, como data guardada como número inteiro, linhas que se multiplicam ao juntar subfatos e a mesma pessoa aparecendo várias vezes no DW
 - [Histórico de alterações](docs/CHANGELOG.md)
 
 ## Licença

@@ -1,6 +1,6 @@
 -- titulo: Vinculados à Equipe sem Visita Domiciliar do ACS desde a Data de Corte
 -- categoria: cadastro_e_territorio
--- tabelas: tb_acomp_cidadaos_vinculados, tb_cidadao, tb_dim_cbo, tb_dim_desfecho_visita, tb_fat_cidadao_pec, tb_fat_visita_domiciliar
+-- tabelas: tb_ods_cidadaos_vinculados, tb_cidadao, tb_dim_cbo, tb_dim_desfecho_visita, tb_fat_cidadao_pec, tb_fat_visita_domiciliar
 -- parametros: ine_1, ini
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: visita que chega ao DW com CNS provisório (criado fora do PEC) não liga à pessoa e ela aparece como sem visita
@@ -14,7 +14,7 @@ WITH vinc AS (
            coalesce(nu_micro_area_domicilio, nu_micro_area_tb_cidadao) AS microarea,
            nullif(regexp_replace(coalesce(nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns
-    FROM tb_acomp_cidadaos_vinculados
+    FROM tb_ods_cidadaos_vinculados
     WHERE nu_ine_vinc_equipe = :'ine_1' AND co_cidadao IS NOT NULL
      AND co_cidadao NOT IN (SELECT co_seq_cidadao FROM tb_cidadao WHERE st_faleceu = 1)
     ORDER BY co_cidadao, dt_ultima_atualizacao_cidadao DESC NULLS LAST

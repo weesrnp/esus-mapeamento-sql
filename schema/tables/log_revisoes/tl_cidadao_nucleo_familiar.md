@@ -2,7 +2,7 @@
 
 Tipo: tabela  
 Grupo: log_revisoes  
-Colunas: 13
+Colunas: 14
 
 | # | Coluna | Tipo | Obrigatória | Chave |
 |--:|---|---|:-:|---|
@@ -19,3 +19,4 @@ Colunas: 13
 | 11 | `nu_cns_profissional` | `character varying(16)` | não |  |
 | 12 | `nu_cbo2002` | `character varying(10)` | não |  |
 | 13 | `co_grau_parentesco` | `integer` | não |  |
+| 14 | `co_familia` | `bigint` | não |  |

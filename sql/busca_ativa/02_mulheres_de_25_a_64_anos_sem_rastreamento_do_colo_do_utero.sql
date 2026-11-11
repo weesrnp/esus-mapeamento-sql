@@ -1,7 +1,7 @@
 -- titulo: Mulheres e Homens Trans de 25 a 64 Anos sem Rastreamento do Câncer do Colo do Útero (C7, Prática A)
 -- categoria: busca_ativa
 -- indicador: C7
--- tabelas: tb_acomp_cidadaos_vinculados, tb_cidadao, tb_dim_procedimento, tb_fat_atd_ind_procedimentos, tb_fat_atendimento_individual, tb_fat_cidadao_pec, tb_fat_proced_atend_proced
+-- tabelas: tb_ods_cidadaos_vinculados, tb_cidadao, tb_dim_procedimento, tb_fat_atd_ind_procedimentos, tb_fat_atendimento_individual, tb_fat_cidadao_pec, tb_fat_proced_atend_proced
 -- parametros: fim, ine_1
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: sexo e identidade de gênero lidos pelo texto da visão de vínculo; não confere CBO de quem registrou o exame
@@ -21,7 +21,7 @@ vinc AS (
            coalesce(v.nu_micro_area_domicilio, v.nu_micro_area_tb_cidadao) AS microarea,
            nullif(regexp_replace(coalesce(v.nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(v.nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns
-    FROM tb_acomp_cidadaos_vinculados v
+    FROM tb_ods_cidadaos_vinculados v
     JOIN tb_cidadao c ON c.co_seq_cidadao = v.co_cidadao AND coalesce(c.st_faleceu, 0) = 0
     WHERE v.nu_ine_vinc_equipe = :'ine_1'
       AND date_part('year', age(to_date(:'fim', 'YYYYMMDD'), v.dt_nascimento_cidadao)) BETWEEN 25 AND 64

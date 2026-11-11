@@ -2,7 +2,7 @@
 
 Tipo: tabela  
 Grupo: fatos  
-Colunas: 71
+Colunas: 70
 
 | # | Coluna | Tipo | Obrigatória | Chave |
 |--:|---|---|:-:|---|
@@ -63,7 +63,6 @@ Colunas: 71
 | 55 | `co_dim_tipo_origem_dado_transp` | `bigint` | não | FK → tb_dim_tipo_origem_dado_transp |
 | 56 | `co_dim_cds_tipo_origem` | `bigint` | não | FK → tb_dim_tipo_origem |
 | 57 | `st_gerado_automaticamente` | `integer` | não |  |
-| 58 | `st_proc_operacionais` | `integer` | não |  |
 | 59 | `st_processa_familita_terrtro` | `integer` | não |  |
 | 60 | `nu_latitude` | `double precision` | não |  |
 | 61 | `nu_longitude` | `double precision` | não |  |

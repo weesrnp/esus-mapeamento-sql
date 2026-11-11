@@ -1,6 +1,6 @@
 -- titulo: Crianças de 16 a 30 Meses Vinculadas à Equipe para Rastreamento M-CHAT-R/F
 -- categoria: busca_ativa
--- tabelas: tb_acomp_cidadaos_vinculados, tb_cidadao, tb_dim_cbo, tb_fat_atendimento_individual, tb_fat_cidadao_pec
+-- tabelas: tb_ods_cidadaos_vinculados, tb_cidadao, tb_dim_cbo, tb_fat_atendimento_individual, tb_fat_cidadao_pec
 -- parametros: fim, ine_1
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: o DW não guarda a aplicação do M-CHAT; a lista mostra só a última consulta de médico ou enfermeiro
@@ -13,7 +13,7 @@ WITH vinc AS (
            coalesce(v.nu_micro_area_domicilio, v.nu_micro_area_tb_cidadao) AS microarea,
            nullif(regexp_replace(coalesce(v.nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(v.nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns
-    FROM tb_acomp_cidadaos_vinculados v
+    FROM tb_ods_cidadaos_vinculados v
     JOIN tb_cidadao c ON c.co_seq_cidadao = v.co_cidadao AND coalesce(c.st_faleceu, 0) = 0
     WHERE v.nu_ine_vinc_equipe = :'ine_1'
       AND v.dt_nascimento_cidadao >  to_date(:'fim', 'YYYYMMDD') - interval '31 months'

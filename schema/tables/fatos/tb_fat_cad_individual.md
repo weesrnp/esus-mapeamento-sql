@@ -2,7 +2,7 @@
 
 Tipo: tabela  
 Grupo: fatos  
-Colunas: 153
+Colunas: 152
 
 | # | Coluna | Tipo | Obrigatória | Chave |
 |--:|---|---|:-:|---|
@@ -136,7 +136,6 @@ Colunas: 153
 | 128 | `st_ficha_inativa` | `integer` | não |  |
 | 129 | `co_fat_cidadao_pec` | `bigint` | não | FK → tb_fat_cidadao_pec |
 | 130 | `co_fat_cidadao_pec_responsvl` | `bigint` | não | FK → tb_fat_cidadao_pec |
-| 131 | `st_proc_operacionais` | `integer` | não |  |
 | 132 | `nu_cpf_cidadao` | `character varying(11)` | não |  |
 | 133 | `nu_cpf_responsavel` | `character varying(11)` | não |  |
 | 134 | `co_dim_povo_comunidad_trad` | `bigint` | não | FK → tb_dim_povo_comunidad_trad |

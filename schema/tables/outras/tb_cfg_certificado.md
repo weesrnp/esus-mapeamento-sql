@@ -2,7 +2,7 @@
 
 Tipo: tabela  
 Grupo: outras  
-Colunas: 12
+Colunas: 14
 
 | # | Coluna | Tipo | Obrigatória | Chave |
 |--:|---|---|:-:|---|
@@ -18,3 +18,5 @@ Colunas: 12
 | 10 | `st_habilitado_rnds` | `integer` | sim |  |
 | 11 | `st_habilitado_cadsus` | `integer` | sim |  |
 | 12 | `st_habilitado_farmacia` | `integer` | sim |  |
+| 13 | `st_habilitado_sinan` | `integer` | sim |  |
+| 14 | `st_habilitado_esus_regulacao` | `integer` | sim |  |

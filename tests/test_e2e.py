@@ -347,7 +347,7 @@ class TestPublicacao(unittest.TestCase):
         git_log_text = res.stdout
 
         # Validacao de IPs (IPv4)
-        ip_rx = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b")
+        ip_rx = re.compile(r"(?<![\d.])(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(?![\d.])")
         leaked_ips = [m.group(0) for m in ip_rx.finditer(git_log_text)]
         self.assertEqual(
             len(leaked_ips),

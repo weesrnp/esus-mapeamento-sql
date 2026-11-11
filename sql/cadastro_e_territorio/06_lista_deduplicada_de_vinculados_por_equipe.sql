@@ -1,6 +1,6 @@
 -- titulo: Lista Deduplicada de Vinculados por Equipe (Padrão para Busca Ativa)
 -- categoria: cadastro_e_territorio
--- tabelas: tb_acomp_cidadaos_vinculados, tb_cidadao
+-- tabelas: tb_ods_cidadaos_vinculados, tb_cidadao
 -- parametros: nu_ine
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: vínculo como está na visão do PEC no momento da consulta; não recalcula a regra de vinculação da Portaria 161/2024
@@ -18,7 +18,7 @@ FROM (
            nullif(regexp_replace(coalesce(v.nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(v.nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns,
            v.st_possui_fci, v.st_possui_fcdt
-    FROM tb_acomp_cidadaos_vinculados v
+    FROM tb_ods_cidadaos_vinculados v
     JOIN tb_cidadao c ON c.co_seq_cidadao = v.co_cidadao AND coalesce(c.st_faleceu, 0) = 0
     WHERE v.nu_ine_vinc_equipe = :'nu_ine'
     ORDER BY v.co_cidadao, v.dt_ultima_atualizacao_cidadao DESC NULLS LAST

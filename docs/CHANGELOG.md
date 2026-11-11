@@ -1,5 +1,25 @@
 # Histórico de alterações
 
+## 2026-11-10 — PEC 5.6.1 (v2.0.0)
+
+O mapa e as consultas passam a acompanhar o PEC 5.6.1. A versão para a 5.5.28 fica na release v1.0.0. Detalhes das mudanças do banco em [novidades-pec-5.6.1.md](novidades-pec-5.6.1.md).
+
+### Esquema
+- Extraído de um PostgreSQL 9.6 vazio, criado com o migrador oficial da 5.6.1: 1.188 tabelas e 7 visões materializadas, 10.796 colunas e 1.688 chaves estrangeiras.
+- Entraram 19 objetos: a fato `tb_fat_problema_condicao`, os 9 data marts `tb_mrt_*`, a visão `mv_busca_ativa_vacina_gest_mrt` e tabelas de errata, documentos do cidadão, agendamento de visita a imóvel e fila de vínculos.
+- Saíram 8 tabelas de relatórios operacionais (`tb_fat_rel_op_*`, `tb_fat_consolidado_cidadao_fai/fci/fvd` e afins) e 6 colunas (5 sem uso e `st_reprocessar_vinculo`, trocada pela fila de vínculos).
+- `tb_acomp_cidadaos_vinculados` virou `tb_ods_cidadaos_vinculados`, e `tb_acomp_cidadaos_vinc_prcs` virou `tb_etl_cidadaos_vinc_prcs`.
+- Novo grupo `data_marts` no mapa, e a tabela de vinculados passou para `cadastro_e_territorio`.
+- As tabelas experimentais do instalador (e-SUS Regulação, SINAN, território em GeoJSON e CID-11) ficaram de fora: elas só são criadas com contextos que a instalação padrão não ativa.
+
+### Consultas
+- 17 consultas trocaram `tb_acomp_cidadaos_vinculados` por `tb_ods_cidadaos_vinculados`.
+- As 41 passam no `EXPLAIN` no banco da 5.6.1 (40 consultas e a função `fn_validar_cns`, que é DDL).
+
+### Documentação
+- Novo `novidades-pec-5.6.1.md` e duas armadilhas novas: a tabela de vinculados renomeada e o cidadão nulo em `tb_fat_problema_condicao`.
+- Capa, imagem de prévia, README e índices atualizados para a 5.6.1.
+
 ## 2026-10-20 — consultas revisadas
 
 19 das 30 consultas retiradas voltaram ao catálogo, que passa a ter 41. As outras 11 eram duplicadas ou estavam fora do escopo e foram apagadas.

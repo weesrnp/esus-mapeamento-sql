@@ -16,4 +16,4 @@ Colunas: 9
 | 8 | `dt_atualizacao` | `timestamp with time zone` | não |  |
 | 9 | `nu_cpf` | `character varying(11)` | não |  |
 
-Referenciada por: `tb_historico_unificacao`
+Referenciada por: `tb_cidadao_grupo_historico`, `tb_historico_unificacao`

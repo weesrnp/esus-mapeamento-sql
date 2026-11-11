@@ -11,7 +11,7 @@ Colunas: 11
 | 3 | `dt_auditoria` | `timestamp without time zone` | sim |  |
 | 4 | `co_seq_perfil` | `bigint` | não |  |
 | 5 | `no_perfil` | `character varying(100)` | não |  |
-| 6 | `no_perfil_filtro` | `character varying(50)` | não |  |
+| 6 | `no_perfil_filtro` | `character varying(100)` | não |  |
 | 7 | `qt_referencia` | `bigint` | não |  |
 | 8 | `co_localidade` | `bigint` | não |  |
 | 9 | `no_perfil_padrao` | `character varying(100)` | não |  |

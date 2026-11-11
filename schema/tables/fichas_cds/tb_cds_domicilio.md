@@ -69,4 +69,4 @@ Colunas: 62
 | 61 | `st_possui_inconsistencia` | `integer` | não |  |
 | 62 | `dt_processamento` | `timestamp without time zone` | não |  |
 
-Referenciada por: `tb_animais_domicilio`, `tb_familia`, `tb_territorio_domicilio_erro`
+Referenciada por: `tb_agendamento_visita_imovel`, `tb_animais_domicilio`, `tb_familia`, `tb_territorio_domicilio_erro`

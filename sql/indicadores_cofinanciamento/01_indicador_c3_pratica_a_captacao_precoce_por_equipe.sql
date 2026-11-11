@@ -1,7 +1,7 @@
 -- titulo: Indicador C3 (Prática A): Captação Precoce do Pré-Natal por Equipe
 -- categoria: indicadores_cofinanciamento
 -- indicador: C3
--- tabelas: tb_acomp_cidadaos_vinculados, tb_dim_cbo, tb_fat_atendimento_individual, tb_fat_cidadao_pec
+-- tabelas: tb_ods_cidadaos_vinculados, tb_dim_cbo, tb_fat_atendimento_individual, tb_fat_cidadao_pec
 -- parametros: fim, ini
 -- uso: somente leitura (SET default_transaction_read_only = on)
 -- limitacoes: só a prática A do C3 (10 de 100 pontos); gestante sem DUM registrada em atendimento não entra; aborto não é excluído
@@ -14,7 +14,7 @@ WITH vinc AS (
     SELECT DISTINCT ON (co_cidadao) co_cidadao, nu_ine_vinc_equipe AS ine,
            nullif(regexp_replace(coalesce(nu_cpf_cidadao, ''), '\D', '', 'g'), '') AS cpf,
            nullif(regexp_replace(coalesce(nu_cns_cidadao, ''), '\D', '', 'g'), '') AS cns
-    FROM tb_acomp_cidadaos_vinculados
+    FROM tb_ods_cidadaos_vinculados
     WHERE co_cidadao IS NOT NULL AND nu_ine_vinc_equipe IS NOT NULL
     ORDER BY co_cidadao, nu_ine_vinc_equipe
 ),
