@@ -90,3 +90,6 @@ Estas vêm das notas que o próprio PEC mostra depois da atualização:
 1. As migrações das versões 5.5.30, 5.5.32, 5.5.33, 5.5.34 e 5.5.35 foram lidas uma a uma, seguindo os `include` do `changelog-master.yaml`.
 2. Um PostgreSQL 9.6 vazio recebeu o migrador oficial da 5.6.1 (`migrador.jar`), do mesmo jeito que numa instalação nova.
 3. O esquema desse banco foi extraído com `scripts/extract_schema.py` e as 41 consultas passaram pelo `scripts/validate_sql.py`.
+4. Depois, numa instalação de produção atualizada da 5.5.28 para a 5.6.1 (PostgreSQL 9.6), o catálogo foi comparado com o mapa, só com leitura: as mesmas 1.195 tabelas e visões, as mesmas 10.796 colunas com tipo e obrigatoriedade iguais, e as mesmas 1.688 chaves estrangeiras. As 41 consultas passaram no `EXPLAIN` também nesse banco.
+
+Uma observação para quem tem visões próprias no banco: elas continuam funcionando depois da atualização, porque o PostgreSQL liga a visão à tabela e não ao nome dela. Uma visão que lia `tb_acomp_cidadaos_vinculados` passa a ler `tb_ods_cidadaos_vinculados` sozinha. O que quebra é o script `.sql` que recria essa visão: se ele ainda usa o nome antigo, falha na próxima vez que for rodado.

@@ -15,6 +15,7 @@ O mapa e as consultas passam a acompanhar o PEC 5.6.1. A versão para a 5.5.28 f
 ### Consultas
 - 17 consultas trocaram `tb_acomp_cidadaos_vinculados` por `tb_ods_cidadaos_vinculados`.
 - As 41 passam no `EXPLAIN` no banco da 5.6.1 (40 consultas e a função `fn_validar_cns`, que é DDL).
+- Conferido também numa instalação de produção atualizada para a 5.6.1: catálogo idêntico ao mapa (1.195 objetos, 10.796 colunas, 1.688 chaves estrangeiras) e as 41 consultas passam no `EXPLAIN`.
 
 ### Documentação
 - Novo `novidades-pec-5.6.1.md` e duas armadilhas novas: a tabela de vinculados renomeada e o cidadão nulo em `tb_fat_problema_condicao`.
